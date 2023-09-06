@@ -1,12 +1,13 @@
 import Categories from "../Categories/Categories";
-import Container from "../Shared/Container/Container";
+import Rooms from "../Rooms/Rooms";
 
 
 const Home = () => {
     return (
-             <Container>
+        <div>
                 <Categories/>
-                </Container>
+                <Rooms/>
+        </div>
     );
 };
 

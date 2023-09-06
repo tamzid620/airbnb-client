@@ -1,27 +1,31 @@
 [
   {
     "location": "Sidemen, Bali",
-    "image": "https://a0.muscache.com/im/pictures/4f70b681-a792-4530-8c52-f2a8d262942d.jpg",
+    "locateTo": "1,600 kilometers away",
+    "image": "https://a0.muscache.com/im/pictures/89f465e3-f918-4192-a066-7d0f989a349c.jpg?im_w=960",
     "dateRange": "Jan 9, 2024 - Jan 14, 2024",
     "price": 456,
     "category": "Beach"
   },
   {
     "location": "Abiansemal, Bali",
-    "image": "https://a0.muscache.com/im/pictures/e25a9b25-fa98-4160-bfd1-039287bf38b6.jpg",
+    "locateTo": "1,700 kilometers away",
+    "image": "https://a0.muscache.com/im/pictures/miso/Hosting-24884787/original/0b3bedc4-08e3-49a3-b7b9-76de3259b6e9.jpeg?im_w=960",
     "dateRange": "Jan 9, 2024 - Jan 14, 2024",
     "price": 513,
     "category": "Beach"
   },
   {
     "location": "Kecamatan Ubud, Bali",
-    "image": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-46761225/original/11058c0d-fac8-4035-8f16-8b3abe7441cd.jpeg",
+    "locateTo": "2,300 kilometers away",
+    "image": "https://a0.muscache.com/im/pictures/miso/Hosting-43659631/original/7b534c9c-c6cd-472a-8c77-29ca73f17fe5.jpeg?im_w=960",
     "dateRange": "Jan 9, 2024 - Jan 14, 2024",
     "price": 456,
     "category": "Pools"
   },
   {
     "location": "Surat Thani, Thailand",
+    "locateTo": "600 kilometers away",
     "image": "https://a0.muscache.com/im/pictures/miso/Hosting-820954888871612167/original/f37e01a9-cb1a-446d-be7e-c1d62d1f1c23.jpeg",
     "dateRange": "Jan 9, 2024 - Jan 14, 2024",
     "price": 456,
@@ -29,6 +33,7 @@
   },
   {
     "location": "Koh samui, Thailand",
+    "locateTo": "1,920 kilometers away",
     "image": "https://a0.muscache.com/im/pictures/miso/Hosting-820950793239599563/original/d5c1f686-f06a-4b65-9f55-32e19dc0b23f.jpeg",
     "dateRange": "Jan 9, 2024 - Jan 14, 2024",
     "price": 513,
@@ -36,6 +41,7 @@
   },
   {
     "location": "Khao Lak, Thailand",
+    "locateTo": "1,210 kilometers away",
     "image": "https://a0.muscache.com/im/pictures/miso/Hosting-826025597172937112/original/d6bbe2ca-9337-4a7e-a5d3-ca8fe72821db.jpeg?im_w=1200",
     "dateRange": "Jan 9, 2024 - Jan 14, 2024",
     "price": 345,
@@ -43,6 +49,7 @@
   },
   {
     "location": "Khao Lak, Thailand",
+    "locateTo": "1,520 kilometers away",
     "image": "https://a0.muscache.com/im/pictures/miso/Hosting-826732383054098647/original/457337ee-af64-462f-90d0-b9fa1ce98a73.jpeg",
     "dateRange": "Jan 9, 2024 - Jan 14, 2024",
     "price": 213,
@@ -50,6 +57,7 @@
   },
   {
     "location": "Khao Lak, Thailand",
+    "locateTo": "1,300 kilometers away",
     "image": "https://a0.muscache.com/im/pictures/miso/Hosting-826726918494647682/original/d1586407-7873-4c15-91e2-61ab713d2aca.jpeg",
     "dateRange": "Jan 9, 2024 - Jan 14, 2024",
     "price": 213,
@@ -57,6 +65,7 @@
   },
   {
     "location": "Kecamatan Ubud, Bali",
+    "locateTo": ",800 kilometers away",
     "image": "https://a0.muscache.com/im/pictures/miso/Hosting-812919482265584093/original/c60bc2f2-7d16-4f7d-acf2-44c2f855fb81.jpeg",
     "dateRange": "Jan 9, 2024 - Jan 14, 2024",
     "price": 213,
@@ -64,10 +73,90 @@
   },
   {
     "location": "Kecamatan Selemadeg, Bali",
+    "locateTo": "2,700 kilometers away",
     "image": "https://a0.muscache.com/im/pictures/miso/Hosting-807995199727408777/original/3ba641e8-f9be-41cb-b834-aba9695726fa.jpeg",
     "dateRange": "Jan 9, 2024 - Jan 14, 2024",
     "price": 513,
     "category": "Lake"
   },
-
+  {
+    "location": "Lake Tahoe, California, USA",
+    "locateTo": "4,100 kilometers away",
+    "image": "https://a0.muscache.com/im/pictures/11eae418-07b6-4bbe-abbe-f3ec9d4dc873.jpg?im_w=960",
+    "dateRange": "Feb 1, 2024 - Feb 7, 2024",
+    "price": 650,
+    "category": "Countryside"
+  },
+  {
+    "location": "Lake District, England",
+    "locateTo": "9,100 kilometers away",
+    "image": "https://a0.muscache.com/im/pictures/12be7d4b-763a-47ea-85a1-07f77d721aa9.jpg?im_w=960",
+    "dateRange": "Mar 15, 2024 - Mar 20, 2024",
+    "price": 450,
+    "category": "Countryside"
+  },
+  {
+    "location": "Lake Geneva, Switzerland",
+    "locateTo": "6,600 kilometers away",
+    "image": "https://a0.muscache.com/im/pictures/miso/Hosting-873064690436431918/original/731b11a7-ce7b-428d-a856-92319a29c1da.jpeg?im_w=1200",
+    "dateRange": "Apr 5, 2024 - Apr 10, 2024",
+    "price": 750,
+    "category": "Pools"
+  },
+  {
+    "location": "Lake Bled, Slovenia",
+    "locateTo": "1,111 kilometers away",
+    "image": "https://a0.muscache.com/im/pictures/miso/Hosting-873031692833121871/original/acc1f42b-46cc-42fc-bfa3-c2e5305aea27.jpeg?im_w=1200",
+    "dateRange": "May 12, 2024 - May 18, 2024",
+    "price": 550,
+    "category": "Pools"
+  },
+  {
+    "location": "Lake Louise, Canada",
+    "locateTo": "2,600 kilometers away",
+    "image": "https://a0.muscache.com/im/pictures/miso/Hosting-878171574433690191/original/c9e70be8-3ef7-41cb-a710-e37dca8df58f.jpeg?im_w=720",
+    "dateRange": "Jun 7, 2024 - Jun 12, 2024",
+    "price": 680,
+    "category": "Islands"
+  },
+  {
+    "location": "Lake Como, Italy",
+    "locateTo": "8,800 kilometers away",
+    "image": "https://a0.muscache.com/im/pictures/miso/Hosting-878966854944197999/original/453ac796-a339-4cdc-b154-15f563cd4c96.jpeg?im_w=1200",
+    "dateRange": "Jul 3, 2024 - Jul 9, 2024",
+    "price": 720,
+    "category": "Islands"
+  },
+  {
+    "location": "Lake Taupo, New Zealand",
+    "locateTo": "3,100 kilometers away",
+    "image": "https://a0.muscache.com/im/pictures/miso/Hosting-873037303456177233/original/96ab2687-ebdb-4e13-9f0d-42913f956578.jpeg?im_w=1200",
+    "dateRange": "Aug 21, 2024 - Aug 27, 2024",
+    "price": 500,
+    "category": "Camping"
+  },
+  {
+    "location": "Plitvice Lakes, Croatia",
+    "locateTo": "8,200 kilometers away",
+    "image": "https://a0.muscache.com/im/pictures/f87eda95-f4e7-4dea-bb59-303bf490d327.jpg?im_w=1200",
+    "dateRange": "Sep 10, 2024 - Sep 16, 2024",
+    "price": 600,
+    "category": "Countryside"
+  },
+  {
+    "location": "Lake Wakatipu, New Zealand",
+    "locateTo": "7,300 kilometers away",
+    "image": "https://a0.muscache.com/im/pictures/1f770f5d-3c95-4521-aa6c-1ff4aede98de.jpg?im_w=960",
+    "dateRange": "Oct 4, 2024 - Oct 10, 2024",
+    "price": 590,
+    "category": "Countryside"
+  },
+  {
+    "location": "Lake Titicaca, Peru",
+    "locateTo": "5,505 kilometers away",
+    "image": "https://a0.muscache.com/im/pictures/e6b5baac-8c71-4dd0-a53d-32db0932da3b.jpg?im_w=720",
+    "dateRange": "Nov 15, 2024 - Nov 20, 2024",
+    "price": 680,
+    "category": "Countryside"
+  }
 ]
