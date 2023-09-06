@@ -1,11 +1,12 @@
-import Navbar from "../Shared/Navbar/Navbar";
+import Categories from "../Categories/Categories";
+import Container from "../Shared/Container/Container";
 
 
 const Home = () => {
     return (
-        <div>
-            <Navbar/>
-        </div>
+             <Container>
+                <Categories/>
+                </Container>
     );
 };
 
