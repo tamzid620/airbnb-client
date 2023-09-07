@@ -1,4 +1,4 @@
-import FIlter from '../Button/FIlter';
+import Filter from '../Filter/Filter';
 import Container from '../Shared/Container/Container';
 import CategoryCart from './CategoryCart';
 import { categories } from './categoriesData'
@@ -22,8 +22,8 @@ const Categories = () => {
           ))
 
         }
-        <div >
-          <FIlter/>
+        <div>
+          <Filter/>
         </div>
       </div>
     </Container>
