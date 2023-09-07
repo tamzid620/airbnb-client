@@ -5,8 +5,8 @@ import Rooms from "../Rooms/Rooms";
 const Home = () => {
     return (
         <div>
-                <Categories/>
-                <Rooms/>
+            <div><Categories /></div>
+            <div><Rooms /> </div>
         </div>
     );
 };
