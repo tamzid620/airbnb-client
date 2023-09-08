@@ -10,7 +10,7 @@ const Modal = () => {
     const [filter, setFilter] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/filter')
+        fetch('https://airbnb-server-p9qaolosq-forced783-gmailcom.vercel.app/filter')
             .then(res => res.json())
             .then((data) => setFilter(data))
     }, [])
