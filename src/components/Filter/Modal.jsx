@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import PriceRange from "./PriceRange/PriceRange";
 import PropertyType from "./PropertyType/PropertyType";
 import RoomsAndBeds from "./RoomsAndBeds/RoomsAndBeds";
@@ -5,6 +6,15 @@ import TypeOfPlace from "./TypeOfPlace/TypeOfPlace";
 
 
 const Modal = () => {
+
+    const [filter, setFilter] = useState([])
+
+    useEffect(() => {
+        fetch('http://localhost:5000/filter')
+            .then(res => res.json())
+            .then((data) => setFilter(data))
+    }, [])
+
     return (
         <div className="modal-box w-11/12 max-w-5xl">
             {/* close button and title section--------    */}
@@ -21,25 +31,25 @@ const Modal = () => {
                 </form>
             </div>
             <div className="flex items-center justify-center ">
-                <h3 className="font-bold text-lg -mt-10">Filters</h3>
+                <h3 className="font-bold text-lg -mt-10">Filters:{filter.length}</h3>
             </div>
 
             <hr />
             {/* action seciton------------ */}
 
 
-{/* Price range section------------ */}
-<PriceRange/>
-{/* Types Of Place section------------ */}
-<TypeOfPlace/>
-{/* Rooms and Beds section------------ */}
-<RoomsAndBeds/>
-{/* Property type section------------ */}
-<PropertyType/>
-{/* search section--------- */}
-<div className=" flex justify-end mt-5">
-    <button className="btn bg-black text-slate-400">Search</button>
-</div>
+            {/* Price range section------------ */}
+            <PriceRange />
+            {/* Types Of Place section------------ */}
+            <TypeOfPlace />
+            {/* Rooms and Beds section------------ */}
+            <RoomsAndBeds />
+            {/* Property type section------------ */}
+            <PropertyType />
+            {/* search section--------- */}
+            <div className=" flex justify-end mt-5">
+                <button className="btn bg-black text-slate-400">Search</button>
+            </div>
 
         </div>
     );

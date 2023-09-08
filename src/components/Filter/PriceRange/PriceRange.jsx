@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Slider from '@mui/material/Slider';
+import './PriceRange.css'
 
 const PriceRange = () => {
 
@@ -20,16 +21,18 @@ const PriceRange = () => {
             <p className="font-semibold text-slate-400">The average nightly price is $750</p>
             <div className='flex justify-center mb-10'>
                 <div className='w-96'>
-                    <Slider
-                        getAriaLabel={() => 'Temperature range'}
-                        value={value}
-                        onChange={handleChange}
-                        valueLabelDisplay="auto"
-                        getAriaValueText={valuetext}
-                        min={213}
-                        max={750}
-                        step={1}
-                    />
+                <Slider
+    className="black-slider"
+    getAriaLabel={() => 'Temperature range'}
+    value={value}
+    onChange={handleChange}
+    valueLabelDisplay="auto"
+    getAriaValueText={valuetext}
+    min={213}
+    max={750}
+    step={1}
+/>
+
                 </div>
             </div>
 

@@ -52,7 +52,7 @@ const TypeOfPlace = () => {
           >
             <input type="checkbox" name="radio-10" className="radio" />
             <div>
-              <h1 className="label-text ms-4 text-lg font-semibold">Shared room</h1>
+              <h1 className="label-text ms-4 text-lg font-semibold">Shared Room</h1>
               <p className="ms-4 text-sm text-slate-400">A sleeping space and common areas that may be shared with others</p>
             </div>
           </label>

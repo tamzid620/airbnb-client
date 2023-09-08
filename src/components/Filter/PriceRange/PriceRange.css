@@ -1,0 +1,15 @@
+/* In your CSS or SCSS file */
+.black-slider {
+    /* Set the background color to black */
+    background-color: rgb(255, 255, 255);
+    
+    /* Optionally, you can change the color of the thumb (the draggable handle) */
+    .MuiSlider-thumb {
+        background-color: rgb(3, 0, 0); /* Change the thumb color to white */
+    }
+    
+    /* Optionally, you can change the color of the track (the line behind the thumb) */
+    .MuiSlider-track {
+        background-color: rgb(0, 0, 0); /* Change the track color to white */
+    }
+}
