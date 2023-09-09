@@ -3,7 +3,7 @@ import { BsFillHouseDownFill, BsBuildingDown } from "react-icons/bs";
 import { LuHotel } from "react-icons/lu";
 import { useState } from "react";
 
-const PropertyType = () => {
+const PropertyType = ({propertyType,setPropertyType}) => {
   const [selected, setSelected] = useState([]);
 
   const handleButtonClick = (index) => {

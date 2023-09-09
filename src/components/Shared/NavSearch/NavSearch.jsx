@@ -7,7 +7,8 @@ import Selector from './Selector';
 
 const NavSearch = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [calendarOpen, setCalendarOpen] = useState(false); 
+  const [calendarOpen, setCalendarOpen] = useState(false);
+  const [selectorOpen, setSelectorOpen] = useState(false);
   const menuRef = useRef(null);
 
   const handleMenuOpen = (e) => {
@@ -19,9 +20,13 @@ const NavSearch = () => {
     e.stopPropagation();
     setCalendarOpen(!calendarOpen);
   };
+  const handlSelectorOpen = (e) => {
+    e.stopPropagation();
+    setSelectorOpen(!calendarOpen);
+  };
 
   const handleSearchFieldClick = (e) => {
-    e.stopPropagation(); 
+    e.stopPropagation();
   };
 
   useEffect(() => {
@@ -40,8 +45,8 @@ const NavSearch = () => {
 
   return (
     <div ref={menuRef}
-     onClick={handleMenuOpen} 
-     className='border-[1px] w-full md:w-auto py-2 rounded-full shadow-sm hover:shadow-md transition cursor-pointer lg:ms-32'>
+      onClick={handleMenuOpen}
+      className='border-[1px] w-full md:w-auto py-2 rounded-full shadow-sm hover:shadow-md transition cursor-pointer lg:ms-32'>
 
       {menuOpen && (
         <div className='menu-content px-10 rounded-none grid sm:grid-cols-1 lg:grid-cols-3 gap-2 '>
@@ -56,27 +61,46 @@ const NavSearch = () => {
             />
           </div>
           {/* Calender section --------------------- */}
-          <div  onClick={handleCalendarOpen} id='calenderopen' className='border-x-[1px] relative p-2 rounded-xl text-sm'>
-          <div className="flex gap-5">
-            <div className='w-30 '>
-              <h1 className='font-semibold'>Check in</h1>
-              <p>Add dates</p>
+          <div onClick={handleCalendarOpen} id='calenderopen' className='border-x-[1px] relative p-2 rounded-xl text-sm'>
+            <div className="flex gap-5">
+              <div className='w-30 '>
+                <h1 className='font-semibold'>Check in</h1>
+                <p>Add dates</p>
+              </div>
+              <div className='w-30'>
+                <h1 className='font-semibold'>Check out</h1>
+                <p>Add dates</p>
+              </div>
             </div>
-            <div className='w-30'>
-              <h1 className='font-semibold'>Check out</h1>
-              <p>Add dates</p>
-            </div>
-          </div>
             <span className='flex justify-center text-xs text-slate-400'>(click to select date)</span>
-          {calendarOpen && (
+            {calendarOpen && (
               <div className='absolute top-full left-0 right-0 bg-white z-10 py-2 px-4 shadow-md rounded-lg'>
                 <Calender />
               </div>
             )}
-            </div>
-            {/* select section ------------------ */}
-            <Selector/>
           </div>
+          {/* select section ------------------ */}
+          <div onClick={handlSelectorOpen} className='flex'>
+            <div className='block'>
+
+            <h1 className='font-semibold'>Who</h1>
+            <p className='text-sm'>Add guests</p>
+            {selectorOpen && (
+              <div className='w-96 flex items-center absolute top-full left-0 right-0 bg-white z-10 py-2 px-4 shadow-md rounded-lg'>
+                <div>
+                  <Selector />
+                </div>
+              </div>
+            )}
+            </div>
+            <div
+            className='p-2 bg-rose-500 rounded-3xl text-white flex gap-3 items-center w-28 h-10'
+            onClick={handleSearchFieldClick} 
+          >
+            <BiSearch size={18} /> Search
+          </div>
+          </div>
+        </div>
       )}
 
       <div id='navsearch' className={`flex flex-row items-center justify-between ${menuOpen ? 'hidden' : ''}`}>

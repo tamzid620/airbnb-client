@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const RoomsAndBeds = () => {
+const RoomsAndBeds = ({roomsAndBeds,setRoomsAndBeds}) => {
 
     const [selectedOption, setSelectedOption] = useState(null);
     const [selectedOption1, setSelectedOption1] = useState(null);

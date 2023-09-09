@@ -1,17 +1,17 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import Slider from '@mui/material/Slider';
 import './PriceRange.css'
 
-const PriceRange = () => {
+const PriceRange = ({setPriceRange,pricerange}) => {
 
-    const [value, setValue] = useState([213, 750]);
+    // const [value, setValue] = useState([]);
 
     const handleChange = (event, newValue) => {
-        setValue(newValue);
+        setPriceRange(newValue);
     };
 
-    const valuetext = (value) => {
-        return `${value}`;
+    const valuetext = (pricerange) => {
+        return `${pricerange}`;
     };
 
 
@@ -24,7 +24,7 @@ const PriceRange = () => {
                 <Slider
     className="black-slider"
     getAriaLabel={() => 'Temperature range'}
-    value={value}
+    value={pricerange}
     onChange={handleChange}
     valueLabelDisplay="auto"
     getAriaValueText={valuetext}
@@ -39,11 +39,11 @@ const PriceRange = () => {
             <div className='grid sm:grid-cols-1 lg:grid-cols-2 justify-center gap-10'>
                 <div className='border p-5 font-semibold rounded-xl'>
                     <h1 className='text-slate-400'>Minium</h1>
-                    <p>${value[0]}</p>
+                    <p>${pricerange[0]}</p>
                 </div>
                 <div className='border p-5 font-semibold rounded-xl'>
                     <h1 className='text-slate-400'>Maximun</h1>
-                    <p>${value[1]}</p>
+                    <p>${pricerange[1]}</p>
                 </div>
             </div>
             <hr className='mt-10' />

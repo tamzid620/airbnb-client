@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import PriceRange from "./PriceRange/PriceRange";
 import PropertyType from "./PropertyType/PropertyType";
 import RoomsAndBeds from "./RoomsAndBeds/RoomsAndBeds";
@@ -7,13 +7,14 @@ import TypeOfPlace from "./TypeOfPlace/TypeOfPlace";
 
 const Modal = () => {
 
-    const [filter, setFilter] = useState([])
+    // const [filter, setFilter] = useState([])
+    const [pricerange, setPriceRange] = useState([213, 750])
+    const [typeOfPlace , setTypeOfPlace]  = useState([])
+    const [roomsAndBeds , setRoomsAndBeds]  = useState([])
+    const [propertyType , setPropertyType]  = useState([])
 
-    useEffect(() => {
-        fetch('https://airbnb-server-p9qaolosq-forced783-gmailcom.vercel.app/filter')
-            .then(res => res.json())
-            .then((data) => setFilter(data))
-    }, [])
+console.log("price",pricerange);
+
 
     return (
         <div className="modal-box w-11/12 max-w-5xl">
@@ -31,7 +32,7 @@ const Modal = () => {
                 </form>
             </div>
             <div className="flex items-center justify-center ">
-                <h3 className="font-bold text-lg -mt-10">Filters:{filter.length}</h3>
+                <h3 className="font-bold text-lg -mt-10">Filters</h3>
             </div>
 
             <hr />
@@ -39,13 +40,13 @@ const Modal = () => {
 
 
             {/* Price range section------------ */}
-            <PriceRange />
+            <PriceRange  pricerange={pricerange} setPriceRange = {setPriceRange} />
             {/* Types Of Place section------------ */}
-            <TypeOfPlace />
+            <TypeOfPlace  typeOfPlace={typeOfPlace} setTypePriceRange={setTypeOfPlace}/>
             {/* Rooms and Beds section------------ */}
-            <RoomsAndBeds />
+            <RoomsAndBeds roomsAndBeds={roomsAndBeds} setRoomsAndBeds={setRoomsAndBeds} />
             {/* Property type section------------ */}
-            <PropertyType />
+            <PropertyType propertyType={propertyType} setPropertyType={setPropertyType} />
             {/* search section--------- */}
             <div className=" flex justify-end mt-5">
                 <button className="btn bg-black text-slate-400">Search</button>

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const TypeOfPlace = () => {
+const TypeOfPlace = ({typeOfPlace,setTypeOfPlace}) => {
   const [selectedOptions, setSelectedOptions] = useState([]);
 
   const handleOptionChange = (option) => {
