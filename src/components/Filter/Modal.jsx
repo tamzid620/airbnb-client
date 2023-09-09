@@ -1,19 +1,34 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PriceRange from "./PriceRange/PriceRange";
-import PropertyType from "./PropertyType/PropertyType";
 import RoomsAndBeds from "./RoomsAndBeds/RoomsAndBeds";
+import PropertyType from "./PropertyType/PropertyType";
 import TypeOfPlace from "./TypeOfPlace/TypeOfPlace";
 
 
 const Modal = () => {
 
-    // const [filter, setFilter] = useState([])
-    const [pricerange, setPriceRange] = useState([213, 750])
-    const [typeOfPlace , setTypeOfPlace]  = useState([])
-    const [roomsAndBeds , setRoomsAndBeds]  = useState([])
-    const [propertyType , setPropertyType]  = useState([])
+    const [filter, setFilter] = useState([])
 
-console.log("price",pricerange);
+    const handleSearch = () => {
+        fetch('http://localhost:5000/rooms')
+            .then(res => res.json())
+            .then(data => setFilter(data));
+    };  
+    console.log("filter----------------", filter);
+
+    const [pricerange, setPriceRange] = useState([213, 750]);
+    const [typeOfPlace , setTypeOfPlace]  = useState([]);
+    const [roomsAndBeds , setRoomsAndBeds]  = useState([]);
+    const [roomsAndBeds1 , setRoomsAndBeds1]  = useState([]);
+    const [roomsAndBeds2 , setRoomsAndBeds2]  = useState([]);
+    const [propertyType , setPropertyType]  = useState([]);
+
+console.log("price ------",pricerange);
+console.log("typeOfPlace------",typeOfPlace);
+console.log("roomsAndBeds------",roomsAndBeds);
+console.log("roomsAndBeds1------",roomsAndBeds1);
+console.log("roomsAndBeds2------",roomsAndBeds2);
+console.log("propertyType------",propertyType);
 
 
     return (
@@ -42,14 +57,18 @@ console.log("price",pricerange);
             {/* Price range section------------ */}
             <PriceRange  pricerange={pricerange} setPriceRange = {setPriceRange} />
             {/* Types Of Place section------------ */}
-            <TypeOfPlace  typeOfPlace={typeOfPlace} setTypePriceRange={setTypeOfPlace}/>
+            <TypeOfPlace typeOfPlace={typeOfPlace} setTypeOfPlace={setTypeOfPlace}/>
             {/* Rooms and Beds section------------ */}
-            <RoomsAndBeds roomsAndBeds={roomsAndBeds} setRoomsAndBeds={setRoomsAndBeds} />
+            <RoomsAndBeds 
+            roomsAndBeds={roomsAndBeds} setRoomsAndBeds={setRoomsAndBeds} 
+            roomsAndBeds1={roomsAndBeds1} setRoomsAndBeds1={setRoomsAndBeds1} 
+            roomsAndBeds2={roomsAndBeds2} setRoomsAndBeds2={setRoomsAndBeds2} 
+            />
             {/* Property type section------------ */}
             <PropertyType propertyType={propertyType} setPropertyType={setPropertyType} />
             {/* search section--------- */}
             <div className=" flex justify-end mt-5">
-                <button className="btn bg-black text-slate-400">Search</button>
+                <button onClick={handleSearch} className="btn bg-black text-slate-400">Search</button>
             </div>
 
         </div>

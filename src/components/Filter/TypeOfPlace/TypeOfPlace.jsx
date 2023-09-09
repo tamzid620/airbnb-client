@@ -1,13 +1,15 @@
-import { useState } from 'react';
+/* eslint-disable react/prop-types */
+
+
 
 const TypeOfPlace = ({typeOfPlace,setTypeOfPlace}) => {
-  const [selectedOptions, setSelectedOptions] = useState([]);
+  // const [typeOfPlace, setTypeOfPlace] = useState([]);
 
   const handleOptionChange = (option) => {
-    if (selectedOptions.includes(option)) {
-      setSelectedOptions(selectedOptions.filter((item) => item !== option));
+    if (typeOfPlace.includes(option)) {
+      setTypeOfPlace(typeOfPlace.filter((item) => item !== option));
     } else {
-      setSelectedOptions([...selectedOptions, option]);
+      setTypeOfPlace([...typeOfPlace, option]);
     }
   };
 
@@ -18,7 +20,7 @@ const TypeOfPlace = ({typeOfPlace,setTypeOfPlace}) => {
         <div className="form-control">
           <label
             className={`label cursor-pointer flex justify-start ${
-              selectedOptions.includes('Entire place') ? 'checked:bg-black' : ''
+              typeOfPlace.includes('Entire place') ? 'checked:bg-black' : ''
             }`}
             onClick={() => handleOptionChange('Entire place')}
           >
@@ -32,7 +34,7 @@ const TypeOfPlace = ({typeOfPlace,setTypeOfPlace}) => {
         <div className="form-control">
           <label
             className={`label cursor-pointer flex justify-start ${
-              selectedOptions.includes('Room') ? 'checked:bg-black' : ''
+              typeOfPlace.includes('Room') ? 'checked:bg-black' : ''
             }`}
             onClick={() => handleOptionChange('Room')}
           >
@@ -46,7 +48,7 @@ const TypeOfPlace = ({typeOfPlace,setTypeOfPlace}) => {
         <div className="form-control">
           <label
             className={`label cursor-pointer flex justify-start ${
-              selectedOptions.includes('Shared room') ? 'checked:bg-black' : ''
+              typeOfPlace.includes('Shared room') ? 'checked:bg-black' : ''
             }`}
             onClick={() => handleOptionChange('Shared room')}
           >

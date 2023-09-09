@@ -1,20 +1,19 @@
+/* eslint-disable react/prop-types */
 import { GiHouse } from "react-icons/gi";
 import { BsFillHouseDownFill, BsBuildingDown } from "react-icons/bs";
 import { LuHotel } from "react-icons/lu";
-import { useState } from "react";
 
 const PropertyType = ({propertyType,setPropertyType}) => {
-  const [selected, setSelected] = useState([]);
 
   const handleButtonClick = (index) => {
-    if (selected.includes(index)) {
-      setSelected(selected.filter((item) => item !== index));
+    if (propertyType.includes(index)) {
+      setPropertyType(propertyType.filter((item) => item !== index));
     } else {
-      setSelected([...selected, index]);
+      setPropertyType([...propertyType, index]);
     }
   };
 
-  const isButtonSelected = (index) => selected.includes(index);
+  const isButtonpropertyType = (index) => propertyType.includes(index);
 
   return (
     <div>
@@ -23,7 +22,7 @@ const PropertyType = ({propertyType,setPropertyType}) => {
       <div className="grid sm:grid-cols-2 lg:grid-cols-4">
         <div
           className={`btn h-32 w-44 block ${
-            isButtonSelected(0) ? "bg-black text-white" : ""
+            isButtonpropertyType(0) ? "bg-black text-white" : ""
           }`}
           onClick={() => handleButtonClick(0)}
         >
@@ -35,7 +34,7 @@ const PropertyType = ({propertyType,setPropertyType}) => {
 
         <div
           className={`btn h-32 w-44 block ${
-            isButtonSelected(1) ? "bg-black text-white" : ""
+            isButtonpropertyType(1) ? "bg-black text-white" : ""
           }`}
           onClick={() => handleButtonClick(1)}
         >
@@ -47,7 +46,7 @@ const PropertyType = ({propertyType,setPropertyType}) => {
 
         <div
           className={`btn h-32 w-44 block ${
-            isButtonSelected(2) ? "bg-black text-white" : ""
+            isButtonpropertyType(2) ? "bg-black text-white" : ""
           }`}
           onClick={() => handleButtonClick(2)}
         >
@@ -59,7 +58,7 @@ const PropertyType = ({propertyType,setPropertyType}) => {
 
         <div
           className={`btn h-32 w-44 block ${
-            isButtonSelected(3) ? "bg-black text-white" : ""
+            isButtonpropertyType(3) ? "bg-black text-white" : ""
           }`}
           onClick={() => handleButtonClick(3)}
         >

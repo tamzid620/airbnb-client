@@ -1,10 +1,10 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 
-const RoomsAndBeds = ({roomsAndBeds,setRoomsAndBeds}) => {
+const RoomsAndBeds = ({ roomsAndBeds,setRoomsAndBeds, roomsAndBeds1,setRoomsAndBeds1, roomsAndBeds2,setRoomsAndBeds2 }) => {
 
-    const [selectedOption, setSelectedOption] = useState(null);
-    const [selectedOption1, setSelectedOption1] = useState(null);
-    const [selectedOption2, setSelectedOption2] = useState(null);
+    // const [selectedOption, setSelectedOption] = useState(null);
+    // const [selectedOption1, setSelectedOption1] = useState(null);
+    // const [selectedOption2, setSelectedOption2] = useState(null);
 
     const options = [
         { id: 1, label: '1' },
@@ -38,13 +38,13 @@ const RoomsAndBeds = ({roomsAndBeds,setRoomsAndBeds}) => {
     ];
 
     const handleChange = (id) => {
-        setSelectedOption(id);
+        setRoomsAndBeds(id);
     };
     const handleChange1 = (id) => {
-        setSelectedOption1(id);
+        setRoomsAndBeds1(id);
     };
     const handleChange2 = (id) => {
-        setSelectedOption2(id);
+        setRoomsAndBeds2(id);
     };
 
 
@@ -59,12 +59,12 @@ const RoomsAndBeds = ({roomsAndBeds,setRoomsAndBeds}) => {
      options.map((option) => (
  <label key={option.id} 
  className={`w-16 h-10 flex items-center justify-center rounded-lg border cursor-pointer
-  ${selectedOption === option.id ? 'bg-black text-white' : 'bg-white text-black' }`}>
+  ${roomsAndBeds === option.id ? 'bg-black text-white' : 'bg-white text-black' }`}>
      <input type="radio" 
      name="options" 
      className="sr-only"
       value={option.id}
-       checked={selectedOption === option.id}
+       checked={roomsAndBeds === option.id}
        onChange={() => handleChange(option.id)} 
        /> {option.label} 
  </label>
@@ -79,13 +79,13 @@ const RoomsAndBeds = ({roomsAndBeds,setRoomsAndBeds}) => {
      options1.map((option) => (
  <label key={option.id} 
  className={`w-16 h-10 flex items-center justify-center rounded-lg border cursor-pointer
-  ${selectedOption1 === option.id ? 'bg-black text-white' : 'bg-white text-black' }`}>
+  ${roomsAndBeds1 === option.id ? 'bg-black text-white' : 'bg-white text-black' }`}>
      <input 
      type="radio" 
      name="options" 
      className="sr-only"
       value={option.id} 
-      checked={selectedOption1 === option.id}
+      checked={roomsAndBeds1 === option.id}
       onChange={() => handleChange1(option.id)} 
       /> {option.label} 
       </label>
@@ -100,13 +100,13 @@ const RoomsAndBeds = ({roomsAndBeds,setRoomsAndBeds}) => {
      options2.map((option) => (
  <label key={option.id} 
  className={`w-16 h-10 flex items-center justify-center rounded-lg border cursor-pointer
-  ${selectedOption2 === option.id ? 'bg-black text-white' : 'bg-white text-black' }`}>
+  ${roomsAndBeds2 === option.id ? 'bg-black text-white' : 'bg-white text-black' }`}>
      <input 
      type="radio" 
      name="options" 
      className="sr-only"
       value={option.id} 
-      checked={selectedOption2 === option.id}
+      checked={roomsAndBeds2 === option.id}
       onChange={() => handleChange2(option.id)} 
       /> {option.label} 
       </label>
