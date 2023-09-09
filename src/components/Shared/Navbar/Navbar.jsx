@@ -1,6 +1,5 @@
 import Container from "../Container/Container";
 import NavIcon from "../NavIcon/NavIcon";
-import { AiOutlineMenu } from 'react-icons/ai'
 import NavSearch from "../NavSearch/NavSearch";
 import NavMenu from "../NavMenu/NavMenu";
 

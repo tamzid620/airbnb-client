@@ -2,7 +2,6 @@ import { BiWorld } from "react-icons/bi";
 import { BsFillPersonFill } from "react-icons/bs";
 import { useState } from "react";
 import { AiOutlineMenu } from 'react-icons/ai'
-import { Link } from "react-router-dom";
 
 const NavMenu = () => {
 
