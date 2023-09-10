@@ -25,6 +25,7 @@ const NavSearch = () => {
     setSelectorOpen(!calendarOpen);
   };
 
+  
   const handleSearchFieldClick = (e) => {
     e.stopPropagation();
   };
@@ -94,6 +95,7 @@ const NavSearch = () => {
             )}
             </div>
             <div
+            
             className='p-2 bg-rose-500 rounded-3xl text-white flex gap-3 items-center w-28 h-10'
             onClick={handleSearchFieldClick} 
           >

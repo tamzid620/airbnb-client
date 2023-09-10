@@ -3,6 +3,7 @@ import PriceRange from "./PriceRange/PriceRange";
 import RoomsAndBeds from "./RoomsAndBeds/RoomsAndBeds";
 import PropertyType from "./PropertyType/PropertyType";
 import TypeOfPlace from "./TypeOfPlace/TypeOfPlace";
+import Rooms from "../Rooms/Rooms";
 
 
 const Modal = () => {
@@ -10,7 +11,7 @@ const Modal = () => {
     const [filter, setFilter] = useState([])
 
     const handleSearch = () => {
-        fetch('http://localhost:5000/rooms')
+        fetch('http://localhost:5000/filter')
             .then(res => res.json())
             .then(data => setFilter(data));
     };  
@@ -33,6 +34,7 @@ console.log("propertyType------",propertyType);
 
     return (
         <div className="modal-box w-11/12 max-w-5xl">
+            
             {/* close button and title section--------    */}
             <div className="modal-action  flex justify-start">
                 <form method="dialog">
