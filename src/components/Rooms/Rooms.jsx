@@ -16,7 +16,8 @@ const Rooms = () => {
 
   useEffect(() => {
     setLoading(true)
-    fetch('https://airbnb-server-p9qaolosq-forced783-gmailcom.vercel.app/rooms')
+    // fetch('https://airbnb-server-p9qaolosq-forced783-gmailcom.vercel.app/rooms')
+    fetch('http://localhost:5000/rooms')
       .then(res => res.json())
       .then(data => {
         if (category) {

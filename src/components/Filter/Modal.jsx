@@ -1,22 +1,13 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import PriceRange from "./PriceRange/PriceRange";
 import RoomsAndBeds from "./RoomsAndBeds/RoomsAndBeds";
 import PropertyType from "./PropertyType/PropertyType";
 import TypeOfPlace from "./TypeOfPlace/TypeOfPlace";
-import Rooms from "../Rooms/Rooms";
 
 
 const Modal = () => {
 
     const [filter, setFilter] = useState([])
-
-    const handleSearch = () => {
-        fetch('http://localhost:5000/filter')
-            .then(res => res.json())
-            .then(data => setFilter(data));
-    };  
-    console.log("filter----------------", filter);
-
     const [pricerange, setPriceRange] = useState([213, 750]);
     const [typeOfPlace , setTypeOfPlace]  = useState([]);
     const [roomsAndBeds , setRoomsAndBeds]  = useState([]);
@@ -24,12 +15,23 @@ const Modal = () => {
     const [roomsAndBeds2 , setRoomsAndBeds2]  = useState([]);
     const [propertyType , setPropertyType]  = useState([]);
 
-console.log("price ------",pricerange);
-console.log("typeOfPlace------",typeOfPlace);
-console.log("roomsAndBeds------",roomsAndBeds);
-console.log("roomsAndBeds1------",roomsAndBeds1);
-console.log("roomsAndBeds2------",roomsAndBeds2);
-console.log("propertyType------",propertyType);
+    
+  const data = {
+    pricerange,
+    typeOfPlace,
+    roomsAndBeds,
+    roomsAndBeds1,
+    roomsAndBeds2,
+    propertyType
+  };
+
+    const handleSearch = () => {
+      
+        fetch(`http://localhost:5000/rooms?${data}`)
+        .then(res => res.json())
+        .then(data => setFilter(data));
+        console.log("data------------",data,"filter----------------", filter);
+      };
 
 
     return (

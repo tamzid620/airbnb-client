@@ -22,9 +22,8 @@ const NavSearch = () => {
   };
   const handlSelectorOpen = (e) => {
     e.stopPropagation();
-    setSelectorOpen(!calendarOpen);
+    setSelectorOpen(!selectorOpen);
   };
-
   
   const handleSearchFieldClick = (e) => {
     e.stopPropagation();
@@ -36,9 +35,7 @@ const NavSearch = () => {
         setMenuOpen(false);
       }
     };
-
     document.addEventListener('click', handleDocumentClick);
-
     return () => {
       document.removeEventListener('click', handleDocumentClick);
     };
