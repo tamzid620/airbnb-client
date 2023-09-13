@@ -7,17 +7,22 @@ import { addDays } from 'date-fns';
 // default system--------------
 
 const NavSearch = () => {
+
   const [menuOpen, setMenuOpen] = useState(false);
   const [calendarOpen, setCalendarOpen] = useState(false);
   const [selectorOpen, setSelectorOpen] = useState(false);
   const [searchValue, setSearchValue] = useState('');
-  const [calenderData,setCalenderData] = useState([
+  const [calenderData, setCalenderData] = useState([
     {
       startDate: new Date(),
       endDate: addDays(new Date(), 7),
       key: 'selection',
     },
   ])
+  const [count, setCount] = useState(0);
+  const [count1, setCount1] = useState(0);
+  const [count2, setCount2] = useState(0);
+  const [count3, setCount3] = useState(0);
   const menuRef = useRef(null);
 
   const handleMenuOpen = (e) => {
@@ -31,12 +36,16 @@ const NavSearch = () => {
   };
   const handlSelectorOpen = (e) => {
     e.stopPropagation();
-    setSelectorOpen(!selectorOpen);
+    setSelectorOpen(!calendarOpen);
   };
-  
+
   const handleSearchFieldClick = (e) => {
     e.stopPropagation();
-    console.log('Search value---:', searchValue , "calenderData =" , calenderData);
+    console.log(
+      'Search value---:', searchValue,
+       "calenderData ---:", calenderData,
+       "selector_value---:",count,">", count1, ">",count2, ">",count3
+       );
   };
 
   useEffect(() => {
@@ -63,13 +72,13 @@ const NavSearch = () => {
             <h1 className='font-semibold mb-2'>Where?</h1>
 
             <form>
-            <input
-              type='text'
-              value={searchValue}
-              placeholder='Search destination'
-              className='input  base-100 w-40 h-5 max-w-xs'
-              onChange={(e) => setSearchValue(e.target.value)} // Attach the new function here as well
-            />
+              <input
+                type='text'
+                value={searchValue}
+                placeholder='Search destination'
+                className='input  base-100 w-40 h-5 max-w-xs'
+                onChange={(e) => setSearchValue(e.target.value)} // Attach the new function here as well
+              />
             </form>
           </div>
           {/* Calender section --------------------- */}
@@ -87,7 +96,10 @@ const NavSearch = () => {
             <span className='flex justify-center text-xs text-slate-400'>(click to select date)</span>
             {calendarOpen && (
               <div className='absolute top-full left-0 right-0 bg-white z-10 py-2 px-4 shadow-md rounded-lg'>
-                <Calender calenderData={calenderData} setCalenderData={setCalenderData}/>
+                <Calender
+                  calenderData={calenderData} s
+                  etCalenderData={setCalenderData}
+                />
               </div>
             )}
           </div>
@@ -95,23 +107,28 @@ const NavSearch = () => {
           <div onClick={handlSelectorOpen} className='flex'>
             <div className='block'>
 
-            <h1 className='font-semibold'>Who</h1>
-            <p className='text-sm'>Add guests</p>
-            {selectorOpen && (
-              <div className='w-96 flex items-center absolute top-full left-0 right-0 bg-white z-10 py-2 px-4 shadow-md rounded-lg'>
-                <div>
-                  <Selector />
+              <h1 className='font-semibold'>Who</h1>
+              <p className='text-sm'>Add guests</p>
+              {selectorOpen && (
+                <div className='w-96 flex items-center absolute top-full left-0 right-0 bg-white z-10 py-2 px-4 shadow-md rounded-lg'>
+                  <div>
+                    <Selector
+                      count={count} setCount={setCount}
+                      count1={count1} setCount1={setCount1}
+                      count2={count2} setCount2={setCount2}
+                      count3={count3} setCount3={setCount3}
+                    />
+                  </div>
                 </div>
-              </div>
-            )}
+              )}
             </div>
             <div
-            
-            className='p-2 bg-rose-500 rounded-3xl text-white flex gap-3 items-center w-28 h-10'
-            onClick={handleSearchFieldClick} 
-          >
-            <BiSearch size={18} /> Search
-          </div>
+
+              className='p-2 bg-rose-500 rounded-3xl text-white flex gap-3 items-center w-28 h-10'
+              onClick={handleSearchFieldClick}
+            >
+              <BiSearch size={18} /> Search
+            </div>
           </div>
         </div>
       )}
