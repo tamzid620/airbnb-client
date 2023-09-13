@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { BiSearch } from 'react-icons/bi';
 import Calender from './Calender';
 import Selector from './Selector';
+import { addDays } from 'date-fns';
 
 // default system--------------
 
@@ -9,6 +10,14 @@ const NavSearch = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [calendarOpen, setCalendarOpen] = useState(false);
   const [selectorOpen, setSelectorOpen] = useState(false);
+  const [searchValue, setSearchValue] = useState('');
+  const [calenderData,setCalenderData] = useState([
+    {
+      startDate: new Date(),
+      endDate: addDays(new Date(), 7),
+      key: 'selection',
+    },
+  ])
   const menuRef = useRef(null);
 
   const handleMenuOpen = (e) => {
@@ -27,6 +36,7 @@ const NavSearch = () => {
   
   const handleSearchFieldClick = (e) => {
     e.stopPropagation();
+    console.log('Search value---:', searchValue , "calenderData =" , calenderData);
   };
 
   useEffect(() => {
@@ -51,12 +61,16 @@ const NavSearch = () => {
           {/* search section --------------------- */}
           <div className=' p-2 rounded-xl'>
             <h1 className='font-semibold mb-2'>Where?</h1>
+
+            <form>
             <input
               type='text'
+              value={searchValue}
               placeholder='Search destination'
               className='input  base-100 w-40 h-5 max-w-xs'
-              onClick={handleSearchFieldClick} // Attach the new function here as well
+              onChange={(e) => setSearchValue(e.target.value)} // Attach the new function here as well
             />
+            </form>
           </div>
           {/* Calender section --------------------- */}
           <div onClick={handleCalendarOpen} id='calenderopen' className='border-x-[1px] relative p-2 rounded-xl text-sm'>
@@ -73,7 +87,7 @@ const NavSearch = () => {
             <span className='flex justify-center text-xs text-slate-400'>(click to select date)</span>
             {calendarOpen && (
               <div className='absolute top-full left-0 right-0 bg-white z-10 py-2 px-4 shadow-md rounded-lg'>
-                <Calender />
+                <Calender calenderData={calenderData} setCalenderData={setCalenderData}/>
               </div>
             )}
           </div>

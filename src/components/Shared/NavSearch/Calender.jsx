@@ -2,17 +2,13 @@
 import 'react-date-range/dist/styles.css'
 import 'react-date-range/dist/theme/default.css'
 import {  DateRangePicker } from 'react-date-range'
-import { addDays } from 'date-fns';
+
 import { useEffect, useState } from 'react';
 
-const Calender = () => {
+const Calender = ({calenderData,setCalenderData}) => {
   const [state, setState] = useState([
-    {
-      startDate: new Date(),
-      endDate: addDays(new Date(), 7),
-      key: 'selection',
-    },
   ]);
+  
 
   const handleCalendarClick = (e) => {
     // Prevent click event propagation to the parent (NavSearch)
@@ -34,11 +30,11 @@ const Calender = () => {
   return (
     <div className='flex justify-center p-5' onClick={handleCalendarClick}>
       <DateRangePicker
-        onChange={(item) => setState([item.selection])}
+        onChange={(item) => setCalenderData([item.selection])}
         showSelectionPreview={true}
         moveRangeOnFirstSelection={false}
         months={2}
-        ranges={state}
+        ranges={calenderData}
         direction="horizontal"
         preventSnapRefocus={true}
         calendarFocus="backwards"
